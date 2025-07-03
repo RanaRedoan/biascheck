@@ -28,12 +28,12 @@ help for {hi:biascheck}
 
 {p 4 4 2}
 Basic usage:{p_end}
-{phang2}{cmd:. biascheck education_level, enum(interviewer_id)}{p_end}
+{phang2}{cmd:. biascheck satisfaction_label, enum(interviewer_name)}{p_end}
 
 {title:Author}
 
 {p 4 4 2}
-Md. Redoan Hossain Bhuiyan, Data School 101{p_end}
+Md. Redoan Hossain Bhuiyan{p_end}
 {p 4 4 2}
 Email: redoanhossain630@gmail.com{p_end}
 {p 4 4 2}

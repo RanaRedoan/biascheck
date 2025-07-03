@@ -11,7 +11,7 @@ net install biascheck, from("https://raw.githubusercontent.com/RanaRedoan/biasch
 ## Usage
 
 ```stata
-biascheck variable_name, enum(enumerator_var) [options]
+biascheck variable_name, enum(enumerator_var)
 ```
 
 ### Options:
@@ -27,7 +27,7 @@ bia_check education_level, enum(interviewer_id)
 
 With all options:
 ```stata
-biascheck Q12, enum(enum_id) excel("MyReport.xlsx") sheet("Q12") consent(consent)
+biascheck Q12, enum(enum_id)
 ```
 
 ## Author

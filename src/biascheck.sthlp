@@ -13,41 +13,22 @@ help for {hi:biascheck}
 
 {p 8 15 2}
 {cmd:biascheck} {varname} {ifin} , {cmd:enum(}{varname}{cmd:)} 
-[{cmd:excel(}{it:string}{cmd:)} 
-{cmd:sheet(}{it:string}{cmd:)} 
-{cmd:consent(}{varname}{cmd:)}]
 
 {title:Description}
 
 {p 4 4 2}
-{cmd:biascheck} generates Excel reports showing the distribution of responses by enumerator,
-helping to identify potential interviewer bias. The command creates dummy variables for
-each category of your specified variable and calculates response proportions by enumerator.
+{cmd:biascheck} is designed to identify potential bias in enumerator responses, particularly for scale-type questions commonly found in surveys. These perception-based questions are prone to enumerator bias, where individual enumerators may influence responses inconsistently. This command generates a table displaying the distribution of response options across enumerators, revealing trends that highlight potential bias, enabling researchers to assess and address inconsistencies in data collection effectively.
 
 {title:Options}
 
 {phang}
 {cmd:enum(}{varname}{cmd:)} specifies the enumerator identifier variable (required).
 
-{phang}
-{cmd:excel(}{it:string}{cmd:)} specifies the output Excel filename. Default is 
-"BiasCheck_YYYY-MM-DD.xlsx".
-
-{phang}
-{cmd:sheet(}{it:string}{cmd:)} specifies the worksheet name. Default is the variable name.
-
-{phang}
-{cmd:consent(}{varname}{cmd:)} specifies a consent filter variable (typically coded 0/1).
-
 {title:Examples}
 
 {p 4 4 2}
 Basic usage:{p_end}
 {phang2}{cmd:. biascheck education_level, enum(interviewer_id)}{p_end}
-
-{p 4 4 2}
-With all options:{p_end}
-{phang2}{cmd:. biascheck Q12 if region==1, enum(enum_id) excel("MyReport.xlsx") sheet("Q12") consent(consent)}{p_end}
 
 {title:Author}
 

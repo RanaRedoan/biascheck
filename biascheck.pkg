@@ -1,0 +1,6 @@
+v 3
+d biascheck: Generate enumerator bias reports
+d distribution-date: 2024-07-03
+f src/biascheck.ado
+f src/biascheck.sthlp
+f examples/example.do

@@ -12,7 +12,7 @@ help for {hi:biascheck}
 {title:Syntax}
 
 {p 8 15 2}
-{cmd:biascheck} {varname} {ifin} , {cmd:enum(}{varname}{cmd:)} 
+{cmd:biascheck} {varname} , {cmd:enum(}{varname}{cmd:)} 
 
 {title:Description}
 

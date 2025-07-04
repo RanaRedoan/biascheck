@@ -42,4 +42,4 @@ Whatsapp: +8801675735811{p_end}
 {title:Also see}
 
 {p 4 4 2}
-Online: {help tabulate}, {help putexcel}
+Online: {help optcounts}, {help putexcel}

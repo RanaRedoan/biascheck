@@ -65,11 +65,12 @@ Enum 3       0.00        0.00        0.50        0.50        0.00
 
 {p 4 4 2}
 • {bf:Enum 3} avoids extreme responses but leans toward "Neutral" and "Disagree"
+{bf:Enum 3}
 
 {title:Examples}
 
 {p 4 4 2}{bf:Basic usage:}{p_end}
-{phang2}{cmd:. biascheck satisfaction_level, enum(interviewer_id)}{p_end}
+{phang2}{cmd: biascheck satisfaction_level, enum(interviewer_id)}{p_end}
 
 
 {title:Author}
@@ -77,7 +78,7 @@ Enum 3       0.00        0.00        0.50        0.50        0.00
 {p 4 4 2}
 Md. Redoan Hossain Bhuiyan{p_end}
 {p 4 4 2}
-Email: {browse "mailto:redoan.hossain630@gmail.com":redoan.hossain630@gmail.com}{p_end}
+Email: {browse "mailto:redoanhossain630@gmail.com":redoanhossain630@gmail.com}{p_end}
 
 {title:Also see}
 

@@ -1,35 +1,106 @@
-# biascheck Stata Package
+# biascheck: Enumerator Bias Detection in Survey Data
 
-A Stata command to generate enumerator bias reports for survey data.
+`biascheck` is a Stata program that helps detect **enumerator bias** in categorical survey responses, particularly Likert-scale questions.  
+It allows researchers to quickly assess whether enumerators (interviewers) are unintentionally influencing responses, producing skewed distributions.
 
-## Installation
+---
+
+## 🔧 Installation
+
+Clone or download this repository and place `biascheck.ado` and `biascheck.sthlp` in your Stata `ado` path.
 
 ```stata
-net install biascheck, from("https://raw.githubusercontent.com/RanaRedoan/biascheck/main") replace
+* Example: install directly from GitHub (if you use github integration)
+net install biascheck, from("https://raw.githubusercontent.com/RanaRedoan/biascheck/main") replace
 ```
 
-## Usage
+---
+
+## 📖 Syntax
 
 ```stata
-biascheck variable_name, enum(enumerator_var)
+biascheck varname , enum(varname) [options]
 ```
 
-### Options:
-- `enum()`: Enumerator variable (required)
+---
 
+## 📌 Options
 
-## Examples
+```text
+Required
+--------
+enum(varname)   Enumerator identifier variable (e.g., interviewer ID)
 
-Basic usage:
+Optional
+--------
+format(%fmt)    Display format for proportions (default %4.2f)
+```
+
+---
+
+## 📊 Description
+
+`biascheck` identifies potential enumerator bias in survey responses, particularly for **ordinal or Likert-scale questions**  
+(e.g., "Strongly Agree" → "Strongly Disagree").  
+
+It generates a frequency distribution table showing how each enumerator’s responses deviate from the overall trend.  
+
+Researchers can use this tool to:  
+- Detect interviewers who may be over- or under-reporting certain responses  
+- Assess data quality before analysis  
+- Train enumerators to reduce bias in future surveys  
+
+---
+
+## 📊 Sample Output
+
+```text
+--------------------------------------------------------------------------
+Enumerator   Highly      Agree       Neutral     Disagree    Highly
+             Agree                                           Disagree
+------------ ----------- ----------- ----------- ----------- ------------
+Enum 1       0.50        0.25        0.00        0.00        0.25
+Enum 2       1.00        0.00        0.00        0.00        0.00
+Enum 3       0.00        0.00        0.50        0.50        0.00
+--------------------------------------------------------------------------
+```
+
+---
+
+## 🧾 Interpretation
+
+- **Enum 1** has a balanced distribution  
+- **Enum 2** shows extreme bias (all respondents answered "Highly Agree")  
+- **Enum 3** avoids extremes but leans toward "Neutral" and "Disagree"  
+
+---
+
+## 🚀 Examples
+
 ```stata
-bia_check education_level, enum(interviewer_id)
+* Basic usage: check enumerator bias on a Likert-scale question
+biascheck satisfaction_level, enum(interviewer_id)
+
+* Change display format for proportions
+biascheck trust_government, enum(enum_id) format(%5.3f)
 ```
 
-With all options:
-```stata
-biascheck Q12, enum(enum_id)
-```
+---
 
-## Author
-Md. Redoan Hossain Bhuiyan
-Email: redoanhossain630@gmail.com
+## 🤝 Contribution
+
+Pull requests and suggestions are welcome!  
+If you find issues or have feature requests, please open an Issue in the repository.
+
+---
+
+## 📜 Author
+
+Md. Redoan Hossain Bhuiyan  
+📧 Email: redoanhossain630@gmail.com  
+
+---
+
+## 📌 License
+
+This project is licensed under the MIT License.

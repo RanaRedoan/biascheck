@@ -5,9 +5,6 @@ It allows researchers to quickly assess whether enumerators (interviewers) are u
 
 ---
 
-## 🔧 Installation
-
-Clone or download this repository and place `biascheck.ado` and `biascheck.sthlp` in your Stata `ado` path.
 
 ```stata
 * Example: install directly from GitHub (if you use github integration)
@@ -19,7 +16,7 @@ net install biascheck, from("https://raw.githubusercontent.com/RanaRedoan/biasch
 ## 📖 Syntax
 
 ```stata
-biascheck varname , enum(varname) [options]
+biascheck varname , enum(varname)
 ```
 
 ---
@@ -104,3 +101,4 @@ Md. Redoan Hossain Bhuiyan
 ## 📌 License
 
 This project is licensed under the MIT License.
+

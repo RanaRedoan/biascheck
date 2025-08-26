@@ -1,4 +1,6 @@
-*! version 1.4.7 03jul2025
+*! version 1.4 03jul2025
+*! Author:  Md. Redoan Hosain Bhuiyan
+
 program define biascheck
     version 17
     
@@ -25,4 +27,5 @@ program define biascheck
     
     * Clean up
     capture drop `dvars'
+
 end

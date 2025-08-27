@@ -16,7 +16,7 @@ net install biascheck, from("https://raw.githubusercontent.com/RanaRedoan/biasch
 ## 📖 Syntax
 
 ```stata
-biascheck varname , enum(varname)
+biascheck varname , by(interviewer_variable)
 ```
 
 ---
@@ -26,7 +26,7 @@ biascheck varname , enum(varname)
 ```text
 Required
 --------
-enum(varname)   Enumerator identifier variable (e.g., interviewer ID)
+by(varname)   Enumerator identifier variable (e.g., interviewer ID)
 
 Optional
 --------
@@ -76,10 +76,10 @@ Enum 3       0.00        0.00        0.50        0.50        0.00
 
 ```stata
 * Basic usage: check enumerator bias on a Likert-scale question
-biascheck satisfaction_level, enum(interviewer_id)
+biascheck satisfaction_level, by(interviewer_id)
 
 * Change display format for proportions
-biascheck trust_government, enum(enum_id) format(%5.3f)
+biascheck trust_government, by(enum_id) format(%5.3f)
 ```
 
 ---
@@ -101,4 +101,5 @@ Md. Redoan Hossain Bhuiyan
 ## 📌 License
 
 This project is licensed under the MIT License.
+
 

@@ -5,9 +5,8 @@ It allows researchers to quickly assess whether enumerators (interviewers) are u
 
 ---
 
-
+## Instalation
 ```stata
-* Example: install directly from GitHub (if you use github integration)
 net install biascheck, from("https://raw.githubusercontent.com/RanaRedoan/biascheck/main") replace
 ```
 
@@ -56,9 +55,9 @@ Researchers can use this tool to:
 Enumerator   Highly      Agree       Neutral     Disagree    Highly
              Agree                                           Disagree
 ------------ ----------- ----------- ----------- ----------- ------------
-Enum 1       0.50        0.25        0.00        0.00        0.25
-Enum 2       1.00        0.00        0.00        0.00        0.00
-Enum 3       0.00        0.00        0.50        0.50        0.00
+John       0.50        0.25        0.00        0.00        0.25
+Mike       1.00        0.00        0.00        0.00        0.00
+David      0.00        0.00        0.50        0.50        0.00
 --------------------------------------------------------------------------
 ```
 
@@ -66,9 +65,9 @@ Enum 3       0.00        0.00        0.50        0.50        0.00
 
 ## 🧾 Interpretation
 
-- **Enum 1** has a balanced distribution  
-- **Enum 2** shows extreme bias (all respondents answered "Highly Agree")  
-- **Enum 3** avoids extremes but leans toward "Neutral" and "Disagree"  
+- **John** has a balanced distribution  
+- **Mike** shows extreme bias (all respondents answered "Highly Agree")  
+- **David** avoids extremes but leans toward "Neutral" and "Disagree"  
 
 ---
 
@@ -101,5 +100,6 @@ Md. Redoan Hossain Bhuiyan
 ## 📌 License
 
 This project is licensed under the MIT License.
+
 
 

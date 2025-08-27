@@ -1,12 +1,23 @@
-* Example usage of bias_check command
-sysuse auto, clear
+*******************************************************
+* Demonstration of biascheck: Enumerator Bias Detection
+* Author: Md. Redoan Hossain Bhuiyan
+* Email: redoanhossain630@gmail.com
+*******************************************************
 
-* Create mock enumerator variable
-set seed 1234
-gen enumerator = "Enum_" + string(ceil(runiform()*5))
+* Clear existing data
+clear all
 
+* Load example dataset
+* Replace this with your actual dataset
+use "survey_data.dta", clear
+
+*----------------------------------------
+* Run biascheck on a Likert-scale variable
+*----------------------------------------
 * Basic usage
-biascheck rep78, enum(enumerator)
+biascheck satisfaction_level, by(interviewer_id)
 
-* With all options
-biascheck foreign, enum(enumerator) 
+*******************************************************
+* End of example.do
+*******************************************************
+

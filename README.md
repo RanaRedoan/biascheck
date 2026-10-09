@@ -5,7 +5,7 @@ It allows researchers to quickly assess whether enumerators (interviewers) are u
 
 ---
 
-## Instalation
+## Installation
 ```stata
 net install biascheck, from("https://raw.githubusercontent.com/RanaRedoan/biascheck/main") replace
 ```
@@ -26,10 +26,6 @@ biascheck varname , by(interviewer_variable)
 Required
 --------
 by(varname)   Enumerator identifier variable (e.g., interviewer ID)
-
-Optional
---------
-format(%fmt)    Display format for proportions (default %4.2f)
 ```
 
 ---
@@ -50,15 +46,22 @@ Researchers can use this tool to:
 
 ## 📊 Sample Output
 
+Each column is one answer category, in order: `satisfaction_1` is the first category
+(here "Highly Agree"), `satisfaction_2` the second, and so on. Each cell is the share of
+that enumerator's respondents who gave that answer; the `Total` row is the whole sample.
+
 ```text
---------------------------------------------------------------------------
-Enumerator   Highly      Agree       Neutral     Disagree    Highly
-             Agree                                           Disagree
------------- ----------- ----------- ----------- ----------- ------------
-John       0.50        0.25        0.00        0.00        0.25
-Mike       1.00        0.00        0.00        0.00        0.00
-David      0.00        0.00        0.50        0.50        0.00
---------------------------------------------------------------------------
+Summary statistics: Mean
+Group variable: enumerator
+
+enumerator | satisf~1  satisf~2  satisf~3  satisf~4  satisf~5
+-----------+--------------------------------------------------
+      John |      .5       .25         0         0       .25
+      Mike |       1         0         0         0         0
+     David |       0         0        .5        .5         0
+-----------+--------------------------------------------------
+     Total |      .5  .0833333  .1666667  .1666667  .0833333
+--------------------------------------------------------------
 ```
 
 ---
@@ -66,8 +69,8 @@ David      0.00        0.00        0.50        0.50        0.00
 ## 🧾 Interpretation
 
 - **John** has a balanced distribution  
-- **Mike** shows extreme bias (all respondents answered "Highly Agree")  
-- **David** avoids extremes but leans toward "Neutral" and "Disagree"  
+- **Mike** shows extreme bias (all respondents gave the first answer, "Highly Agree")  
+- **David** avoids extremes but leans toward the third and fourth answers ("Neutral" and "Disagree")  
 
 ---
 
@@ -77,8 +80,8 @@ David      0.00        0.00        0.50        0.50        0.00
 * Basic usage: check enumerator bias on a Likert-scale question
 biascheck satisfaction_level, by(interviewer_id)
 
-* Change display format for proportions
-biascheck trust_government, by(enum_id) format(%5.3f)
+* Another question, another enumerator variable
+biascheck trust_government, by(enum_id)
 ```
 
 ---

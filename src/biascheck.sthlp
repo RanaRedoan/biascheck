@@ -12,7 +12,7 @@ help for {bf:biascheck} {right:Generate interviewer bias reports}
 {title:Syntax}
 
 {p 4 4 2}
-{cmd:biascheck} {it:varname} {cmd:,} {cmdab:by:(varname)} [{it:options}]
+{cmd:biascheck} {it:varname} {cmd:,} {cmdab:by:(varname)}
 
 {synoptset 20 tabbed}{...}
 {synopthdr}
@@ -20,8 +20,6 @@ help for {bf:biascheck} {right:Generate interviewer bias reports}
 {syntab:Required}
 {synopt:{cmdab:by:(varname)}}Grouping variable, usually interviewer ID{p_end}
 
-{syntab:Options}
-{synopt:{cmdab:format:(%fmt)}}Display format for proportions (default %4.2f){p_end}
 {synoptline}
 {p2colreset}{...}
 
@@ -47,15 +45,17 @@ Researchers can use this to:
 
 {title:Sample Output}
 
+{p 4 4 2}
+Each column is one answer category, in order ({it:varname}{cmd:_1} is the first category, {it:varname}{cmd:_2} the second, ...). Each cell is the share of that interviewer's respondents who gave that answer; the Total row is the whole sample.
+
 {cmd}
---------------------------------------------------------------------------
-Interviewer   Highly      Agree       Neutral     Disagree    Highly
-              Agree                                           Disagree
-------------  ----------- ----------- ----------- ----------- ------------
-Int. 1        0.50        0.25        0.00        0.00        0.25
-Int. 2        1.00        0.00        0.00        0.00        0.00
-Int. 3        0.00        0.00        0.50        0.50        0.00
---------------------------------------------------------------------------
+  interviewer | satisf~1  satisf~2  satisf~3  satisf~4  satisf~5
+  ------------+--------------------------------------------------
+       Int. 1 |      .5       .25         0         0       .25
+       Int. 2 |       1         0         0         0         0
+       Int. 3 |       0         0        .5        .5         0
+  ------------+--------------------------------------------------
+        Total |      .5  .0833333  .1666667  .1666667  .0833333
 {txt}
 
 {title:Interpretation}
@@ -88,4 +88,4 @@ GitHub: {browse "https://github.com/RanaRedoan"}{p_end}
 {title:Also see}
 
 {p 4 4 2}
-Online: {help optcounts}, {help codebookgen}, {help exportopenended}, {help inputcorrection}{p_end}
+Online: {help optcounts}, {help gencodebook}, {help exportopenended}, {help inputcorrection}{p_end}
